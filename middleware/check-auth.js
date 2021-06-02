@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const { credentails } = require('../credentials')
 
-const JWT_KEY = credentails.JWT_KEY || process.env.JWT_KEY;
+const JWT_KEY = process.env.JWT_KEY || credentails.JWT_KEY;
 
 module.exports = (req, res, next) => {
   try {

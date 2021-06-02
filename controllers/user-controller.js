@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user-model");
 const { credentails } = require('../credentials')
 
-const JWT_KEY = credentails.JWT_KEY || process.env.JWT_KEY;
+const JWT_KEY = process.env.JWT_KEY || credentails.JWT_KEY;
 exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({

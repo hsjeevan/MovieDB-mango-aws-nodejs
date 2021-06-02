@@ -5,9 +5,10 @@ const moviesRoutes = require("./routes/movies-route");
 const userRoutes = require("./routes/users-route");
 
 const app = express();
-const { credentails } = require('./credentials')
+// const { credentails } = require('./credentials')
 
-const MONGO_ATLAS_PW = credentails.MONGO_ATLAS_PW || process.env.MONGO_ATLAS_PW;
+const MONGO_ATLAS_PW =  process.env.MONGO_ATLAS_PW 
+// || credentails.MONGO_ATLAS_PW
 
 mongoose.connect(
   "mongodb+srv://jeevan:" + MONGO_ATLAS_PW + "@moviedb.cka3x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
